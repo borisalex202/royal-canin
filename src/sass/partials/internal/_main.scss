@@ -1,0 +1,49 @@
+html, body {
+  font-family: $font-family-base;
+  font-size: $font-size;
+  font-weight: 400;
+  height: 100%;
+  min-width: 300px;
+}
+body {
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+.container {
+  background: transparent;
+
+  @media (min-width: $screen-lg) {
+    width: 1130px
+  }
+  @media (max-width: $screen-xs-max) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+}
+.bg {
+  @each $bg, $color in $bg-colors {
+    &-#{$bg} {
+      background-color: $color;
+    }
+  }
+}
+.text {
+  @each $colorName, $color in $colors {
+    &-#{$colorName} {
+      color: $color;
+    }
+  }
+  &-white {
+    color: #fff;
+  }
+  &-red {
+    color: #ed1b2e;
+  }
+}
+.shadow {
+  @include box-shadow($shadow);
+}
+.relative {
+  position: relative;
+}

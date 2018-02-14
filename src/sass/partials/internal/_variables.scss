@@ -1,0 +1,44 @@
+/* Fonts */
+$font-family-base:             'DIN Pro', sans-serif;
+$font-size:                    16px;
+
+/* Animation */
+$transition:                   all .3s ease;
+
+/* Main */
+$shadow:                       0px 0px 76px 0px rgba(37, 37, 37, 0.18);
+
+//  Colors
+$colors: (
+        default:               #EC001A,
+        primary:               #00B7B9,
+        text:                  #333333,
+        link:                  #EC001A,
+        heading:               #333333,
+        border:                #666666,
+        border-light:          #E1E1E1,
+        gray:                  #F6F6F6,
+        gray-dark:             #666666,
+
+        btnDefault:            #FF0F26,
+        btnDefaultHover:       darken(#FF0F26, 10%)
+);
+
+//  Size
+$size: (
+        h1:                    40px,
+        h2:                    30px,
+        h3:                    35px,
+        h4:                    30px,
+        h5:                    25px,
+        h6:                    20px,
+        p:                     16px,
+        a:                     16px
+);
+
+//  Background
+$bg-colors: (
+        default:               #EC001A,
+        gray:                  #F6F6F6,
+        gray-dark:             #808285
+);

@@ -1,0 +1,29 @@
+.form {
+  &-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  &-control {
+
+  }
+  &-upload {
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include align-items(center);
+
+    &__input {
+      display: none;
+    }
+    &__btn {
+      font-size: 16px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    &__text {
+      margin-left: 10px;
+      font-size: 16px;
+      color: rgb(102, 102, 102);
+      line-height: 1.25;
+    }
+  }
+}

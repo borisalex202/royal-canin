@@ -1,0 +1,32 @@
+@@include('templates/_head.html', {
+        "title": "Royal Canin :: Главная"
+})
+@@include('templates/_header.html')
+                <div class="banner">
+                    <div class="container">
+                        <div class="banner__left">
+                            <p class="title">ПРОВЕРЬ ЗДОРОВЬЕ <br>СВОЕЙ КОШКИ</p>
+                            <div class="counter-block">
+                                <div class="counter counter-analog2" data-direction="up" data-interval="1" data-format="99 999" data-initial="56 233" data-stop="99 999"></div>
+                                <p class="counter-label">
+                                    человека<br>
+                                    проверят здоровье<br>
+                                    своих питомцев
+                                </p>
+                            </div>
+                            <p class="description">70% кошек не проходят профилактические осмотры. <br>Запланируйте посещение ветеринарной клиники и поделитесь своим решением c друзьями, а мы поможем кошкам из приютов найти дом.</p>
+                        </div>
+                        <div class="banner__right">
+                            <p class="title">Я ответственный хозяин, поэтому запланировал профилактический ветеринарный осмотр</p>
+                            <input type="text" placeholder="Кличка вашей кошки">
+                            <div class="form-upload">
+                                <span class="btn btn-default form-upload__btn js-inc-counter">Загрузить фото</span>
+                                <span class="form-upload__text">Загрузите фото <br>вашей кошки</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+@@include('templates/_footer.html')
+@@include('templates/_scripts.html')
+@@include('templates/_end.html')
