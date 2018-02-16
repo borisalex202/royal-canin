@@ -1,0 +1,156 @@
+.smooth {
+  &__left {
+    width: 40%;
+
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+    }
+  }
+  &__right {
+    position: relative;
+    width: 60%;
+    border-left: 1px solid map_get($colors, gray);
+    border-bottom: 1px solid map_get($colors, border-light);
+    padding: 25px 0 25px 45px;
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include align-items(center);
+
+    &:after {
+      content: '';
+      position: absolute;
+      min-width: 1000%;
+      left: 100%;
+      right: 0;
+      bottom: -1px;
+      top: 0;
+      border-bottom: 1px solid map_get($colors, border-light);
+      pointer-events: none;
+    }
+    img {
+      max-width: 200px;
+      max-height: 250px;
+
+      @media (min-width: $screen-md) and (max-width: $screen-lg) {
+        max-width: 150px;
+      }
+    }
+    .info {
+      padding-left: 30px;
+      width: 100%;
+      max-width: calc(100% - 200px);
+    }
+    .title {
+      font-size: 26px;
+      text-transform: uppercase;
+      line-height: 1.462;
+      margin-bottom: 8px;
+
+      @media (min-width: $screen-md) and (max-width: $screen-lg) {
+        font-size: 20px;
+      }
+    }
+    @media (max-width: $screen-sm-max) {
+      width: 100%;
+      border-left: 0;
+
+      &:before {
+        content: '';
+        position: absolute;
+        min-width: 1000%;
+        right: 0;
+        left: -100%;
+        bottom: -1px;
+        top: 0;
+        pointer-events: none;
+        border-bottom: 1px solid map_get($colors, border-light);
+      }
+    }
+  }
+  &__why,
+  &__marker {
+    position: relative;
+    padding: 45px 45px 45px 65px;
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      left: 4px;
+      z-index: 2;
+      @include translate(0, -50%);
+    }
+    .title {
+      font-size: 22px;
+      text-transform: uppercase;
+      line-height: 1.182;
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 1.5;
+      margin-top: 4px;
+      position: relative;
+      z-index: 2;
+    }
+  }
+  &__why {
+    padding-top: 48px;
+    padding-bottom: 32px;
+  }
+  &__marker {
+    padding-top: 50px;
+
+    &-thumb {
+      position: absolute;
+      left: 0;
+      right: -1px;
+      bottom: 0;
+      top: 0;
+      z-index: 1;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+
+      @media (min-width: $screen-md) {
+        left: -150%;
+      }
+    }
+    .title {
+      line-height: 32px;
+    }
+    .icon {
+      left: 15px;
+    }
+  }
+  .container {
+    @include flexbox();
+    @include flex-wrap(wrap);
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+  @media (max-width: $screen-sm-max) {
+    &__why,
+    &__marker {
+      min-height: 155px;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include align-items(center);
+
+      &-thumb {
+        width: 150%;
+        left: -25%;
+      }
+    }
+    br {
+      display: none;
+    }
+  }
+  @media (max-width: $screen-xs-max) {
+    display: none;
+  }
+}

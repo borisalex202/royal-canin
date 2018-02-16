@@ -1,0 +1,218 @@
+.modal {
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background: transparent;
+  @include transition($transition);
+  @include translate(0, 0);
+  @include opacity(0);
+
+  &.in {
+    display: -webkit-box !important;
+    display: -webkit-flex !important;
+    display: -moz-flex !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    @include flex-wrap(wrap);
+    @include align-items(center);
+    @include opacity(1);
+  }
+  &.fade {
+    .modal {
+      &-dialog {
+        @include translate(0, 0);
+      }
+    }
+  }
+  &._upload {
+    .form-upload {
+      &:hover {
+        .form-upload__text {
+          color: map_get($colors, default);
+        }
+      }
+      &__text {
+        color: #fff;
+      }
+    }
+    .form-crop {
+      min-height: 430px;
+      border: 10px solid #fff;
+      background: #D7D7D7;
+      position: relative;
+      margin-bottom: 20px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 3;
+        pointer-events: none;
+        @include box-shadow(inset 0 -250px 150px -100px rgba(0, 0, 0, .6));
+      }
+      &__thumb {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        @include flexbox();
+        @include flex-wrap(wrap);
+        @include align-items(center);
+      }
+      &__content {
+        width: 100%;
+        padding: 30px 35px;
+        margin: auto 0 0 0;
+        z-index: 5;
+        pointer-events: none;
+      }
+      &__image {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 0;
+      }
+      &__title {
+        display: block;
+        font-size: 20px;
+        color: rgb(255, 255, 255);
+        text-transform: uppercase;
+        line-height: 1.5;
+        margin-bottom: 5px;
+      }
+      &__description {
+        display: block;
+        max-width: 60%;
+        font-size: 16px;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.375;
+
+        @media (max-width: $screen-xs-max) {
+          max-width: 100%;
+        }
+      }
+      .icon-logo {
+        position: absolute;
+        bottom: 35px;
+        right: 35px;
+        fill: #ffffff;
+        max-width: 70px;
+        max-height: 27px;
+        z-index: 5;
+        pointer-events: none;
+        @include opacity(.3);
+      }
+
+      @media (max-width: $screen-xs-max) {
+        min-height: 290px;
+
+        &__content {
+          padding: 15px;
+        }
+        .icon-logo {
+          bottom: 15px;
+          right: 15px;
+        }
+      }
+    }
+    .modal {
+       &-dialog {
+         width: 100%;
+         max-width: 785px;
+       }
+    }
+  }
+  &-dialog {
+    overflow: initial;
+    margin: auto;
+    @include translate(0, 0);
+  }
+  &-backdrop {
+    background: #3E3838;
+    @include transition($transition);
+    @include opacity(0);
+
+    &.in {
+      @include opacity(.8);
+    }
+  }
+  &-content {
+    background: #272121;
+    border: 0;
+    border-radius: 0;
+    @include box-shadow(none);
+
+    @media (max-width: $screen-sm-max) {
+      min-height: 100vh;
+    }
+  }
+  &-close {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: -60px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 0;
+    z-index: 1100;
+
+    .icon {
+      max-width: 40px;
+      max-height: 40px;
+      fill: #fff;
+    }
+    &:hover {
+      .icon {
+        fill: map_get($colors, default);
+      }
+    }
+
+    @media (max-width: $screen-xs-max) {
+      width: 30px;
+      height: 30px;
+      top: 20px;
+      right: 20px;
+
+      .icon {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+  &-body {
+    padding: 50px;
+
+    @media (max-width: $screen-xs-max) {
+      padding: 70px 20px;
+    }
+  }
+  &-footer {
+    border: 0;
+    padding: 0;
+    @include flexbox();
+    @include flex-wrap(wrap);
+    @include align-items(center);
+
+    .btn {
+      @media (min-width: $screen-sm) {
+        font-size: 20px;
+        min-width: 180px;
+        padding: 20px 35px 18px;
+        border-radius: 28px;
+        margin-left: auto;
+      }
+      @media (max-width: $screen-xs-max) {
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  }
+}

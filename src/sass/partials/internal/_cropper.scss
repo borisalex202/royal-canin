@@ -1,0 +1,19 @@
+.cropper {
+  &-container {
+    min-width: 100% !important;
+    min-height: 100% !important;
+    background: transparent;
+  }
+  &-canvas {
+    min-width: 100% !important;
+    min-height: 100% !important;
+
+    img {
+      min-width: 100% !important;
+      min-height: 100% !important;
+    }
+  }
+  &-modal {
+    background: transparent;
+  }
+}

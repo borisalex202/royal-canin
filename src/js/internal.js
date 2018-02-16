@@ -2,6 +2,7 @@ var config = @@include('../../config.json');
 
 
 $(function() {
+    var $image = $('.cropper');
 
     $(window).on('load', function() {
         $('.icon use').each(function () {
@@ -12,34 +13,45 @@ $(function() {
         });
     });
 
-    $(document).on('click', '.js-menu-toggle', function (e) {
+    @@include('./partials/internal/_sliders.js')
+    @@include('./partials/internal/_menu.js')
+    @@include('./partials/internal/_counter.js')
+
+    $('.form-upload__input').on('change', function (e) {
         var $this = $(this),
-            $menu = $('.site-menu');
+            $formUpload = $this.closest('.form-upload'),
+            $text = $formUpload.find('.form-upload__text'),
+            $upload = $formUpload.data('upload'),
+            $textAdd = $formUpload.data('add'),
+            $textChange = $formUpload.data('change');
 
-        e.preventDefault();
-        $this.toggleClass('_active');
-        $menu.toggleClass('_active');
+        $formUpload.data('upload', true);
+        $upload = true;
+        $text.html(function(){
+            return $upload ? $textChange : $textAdd;
+        });
+        initCrop($image);
+        previewFile(e.target, $image);
+
     });
-    $(document).mouseup(function (e){
-        var el = $('.site-menu');
-        if (!el.is(e.target)
-            && el.has(e.target).length === 0
-            && !$(e.target).hasClass('js-menu-toggle')) {
-            $('.js-menu-toggle').removeClass('_active');
-            el.removeClass('_active');
+    $(document).on('click', '.js-pet__btn', function (e) {
+        var $input = $('.js-pet__input'),
+            $inputName = $input.val(),
+            $name = $('.js-pet__name');
+
+        if($inputName.length) {
+            $input.removeClass('_error');
+            $('#upload').modal('show');
+        } else {
+            $input.addClass('_error');
+            e.preventDefault();
+            return false;
         }
+        $name.text(function () {
+            return $inputName.length > 0 ? $inputName : '…………';
+        })
     });
 
-    $('.counter')
-        .counter({
-            initial: '56 233',
-            digitWidth: 50,
-            digitHeight: 77
-        })
-        .counter('stop');
-    $(document).on('click', '.js-inc-counter', function () {
-        incCounter();
-    });
 });
 
 // Functions
@@ -49,4 +61,22 @@ function incCounter() {
     setTimeout(function(){
         $('.counter').counter('stop');
     }, 1);
+}
+function initCrop(el) {
+    el.cropper({
+        autoCropArea: 1,
+        dragMode: 'move'
+    });
+}
+function previewFile(input, el) {
+    var file    = input.files[0],
+        reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+        el.cropper('replace', reader.result);
+    }, false);
+
+    if (file) {
+        reader.readAsDataURL(file);
+    }
 }

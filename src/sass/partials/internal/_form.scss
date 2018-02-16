@@ -22,8 +22,36 @@
     &__text {
       margin-left: 10px;
       font-size: 16px;
-      color: rgb(102, 102, 102);
+      color: map_get($colors, border);
       line-height: 1.25;
+    }
+    &__add {
+      cursor: pointer;
+      font-size: 16px;
+      color: rgb(255, 255, 255);
+      text-transform: uppercase;
+      line-height: 1.5;
+      text-align: left;
+      @include flexbox();
+      @include flex-wrap(wrap);
+      @include align-items(center);
+      @include transition($transition);
+
+      &:hover {
+        color: map_get($colors, default);
+
+        .icon {
+          fill: map_get($colors, default);
+        }
+      }
+      .icon {
+        max-width: 44px;
+        max-height: 35px;
+        fill: #fff;
+        margin-right: 12px;
+        position: relative;
+        top: -3px;
+      }
     }
   }
 }

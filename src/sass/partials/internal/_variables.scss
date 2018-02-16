@@ -21,7 +21,12 @@ $colors: (
         gray-dark:             #666666,
 
         btnDefault:            #FF0F26,
-        btnDefaultHover:       darken(#FF0F26, 10%)
+        btnDefaultHover:       darken(#FF0F26, 10%),
+
+        success:               #47B800,
+        warning:               #EE8B00,
+        error:                 #C03344,
+        inactive:              #EAEAEA
 );
 
 //  Size

@@ -44,6 +44,9 @@
                     <a href="index.html" class="site-logo">
                         <svg class="icon icon-logo"><use xlink:href="#icon-logo"></use></svg>
                     </a>
+                    <a href="index.html" class="site-logo _mini">
+                        <svg class="icon icon-favicon"><use xlink:href="#icon-favicon"></use></svg>
+                    </a>
                     <div class="right">
                         <p class="company">Общероссийская кампания <br>«Проверь здоровье своей кошки»</p>
 
@@ -81,7 +84,7 @@
 
             <!-- CONTENT -->
             <main class="site-main">
-                <div class="banner">
+                <div class="banner js-header-show">
                     <div class="container">
                         <div class="banner__left">
                             <p class="title">ПРОВЕРЬ ЗДОРОВЬЕ <br>СВОЕЙ КОШКИ</p>
@@ -97,15 +100,112 @@
                         </div>
                         <div class="banner__right">
                             <p class="title">Я ответственный хозяин, поэтому запланировал профилактический ветеринарный осмотр</p>
-                            <input type="text" placeholder="Кличка вашей кошки">
+                            <input type="text" placeholder="Кличка вашей кошки" class="js-pet__input">
                             <div class="form-upload">
-                                <span class="btn btn-default form-upload__btn js-inc-counter">Загрузить фото</span>
-                                <span class="form-upload__text">Загрузите фото <br>вашей кошки</span>
+                                <span class="btn btn-default form-upload__btn js-pet__btn">Загрузить фото</span>
+                                <span class="form-upload__text">Загрузите фото <br>вашей кошки <span class="visible-xs">и поделитесь решением с друзьями</span></span>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="share">
+                    <div class="container">
+                        <div class="share__left">
+                            <p class="title">Поделитесь своим&nbsp;решением с&nbsp;друзьями</p>
+                            <p class="description">За каждое обещание проверить здоровье кошки мы перечислим 100 рублей* в&nbsp;фонд <a href="#">«Подарок судьбы»</a>.</p>
+                        </div>
+                        <div class="share__right">
+                            <nav class="social-links--brand1-bkgrnd">
+                                <ul class="list--blank list--align">
+                                    <li class="social-links__item">
+                                        <a href="#" class="social__network--facebook rc-icon rc-icon-facebook--brand3">
+                                        </a>
+                                    </li>
+                                    <li class="social-links__item">
+                                        <a href="#" class="social__network--instagram rc-icon rc-icon-instagram--brand3">
+                                        </a>
+                                    </li>
+                                    <li class="social-links__item">
+                                        <a href="#" class="social__network--twitter rc-icon rc-icon-twitter--brand3">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="smooth">
+                    <div class="container">
+                        <div class="smooth__left">
+                            <div class="smooth__why">
+                                <svg class="icon icon-message"><use xlink:href="#icon-message"></use></svg>
+                                <p class="title">Узнайте, почему</p>
+                                <p class="description">регулярные профилактические осмотры <br>у ветеринарного врача необходимы </p>
+                            </div>
+                            <div class="smooth__marker">
+                                <div class="smooth__marker-thumb" style="background-image: url('img/map.jpg')";></div>
+                                <svg class="icon icon-marker"><use xlink:href="#icon-marker"></use></svg>
+                                <p class="title">Найдите ближайшую <br>ветеринарную клинику</p>
+                            </div>
+                        </div>
+                        <div class="smooth__right">
+                            <img src="img/cat1.jpg" alt="">
+                            <div class="info">
+                                <p class="title">Насколько хорошо <br>вы разбираетесь <br>в поведении своей кошки?</p>
+                                <a href="#" class="btn btn-default">Пройти тест</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="statistics">
+                    <div class="container">
+                        <p class="statistics__title">Насколько внимательно вы следите <br>за здоровьем своей кошки?* </p>
+                        <p class="statistics__description">*По данным исследования, проведенным Royal Canin <br>в 15 городах-миллионниках среди 1 153 владельцев кошек</p>
 
+                        <div class="slider-cat js-slider-cat">
+                            <div class="slider-cat__item">
+                                <div class="slider-cat__item_main">
+                                    <div class="slider-cat__item_thumb" style="background-image: url('img/cat-icon1.png')"></div>
+                                    <div class="slider-cat__item_content">
+                                        <div class="slider-cat__item_title">29% хозяев кошек</div>
+                                        <div class="slider-cat__item_description">Внимательно следят <br>за здоровьем своих кошек</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-cat__item">
+                                <div class="slider-cat__item_main">
+                                    <div class="slider-cat__item_thumb" style="background-image: url('img/cat-icon2.png')"></div>
+                                    <div class="slider-cat__item_content">
+                                        <div class="slider-cat__item_title">68% кошек</div>
+                                        <div class="slider-cat__item_description">Не проходят вакцинацию</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="slider-cat__item">
+                                <div class="slider-cat__item_main">
+                                    <div class="slider-cat__item_thumb" style="background-image: url('img/cat-icon3.png')"></div>
+                                    <div class="slider-cat__item_content">
+                                        <div class="slider-cat__item_title">43% кошек</div>
+                                        <div class="slider-cat__item_description">Посещают врача недостаточно часто</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="statistics__info">
+                            <div class="statistics__thumb">
+                                <img src="img/cat2.png" alt="">
+                                <span class="circle">
+                                    <span class="circle__number">71%</span>
+                                    <span class="circle__text">кошек</span>
+                                </span>
+                            </div>
+                            <div class="statistics__content">
+                                <strong>По данным нашего исследования, 71% кошек вообще не проходит регулярные профилактические осмотры.</strong>
+                                Чтобы проинформировать владельцев о том, как важно следить за здоровьем кошек, мы проводим общероссийскую кампанию «Проверь здоровье своей кошки». Каждая кошка заслуживает заботы о своем здоровье
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
             <!-- /CONTENT -->
 
@@ -115,10 +215,42 @@
             </footer>
             <!-- /FOOTER -->
 
+        </div>
+
             <script src="js/external.js"></script>
             <script src="js/internal.js"></script>
 
-
+<div class="modal fade _upload" id="upload">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="modal-close" data-dismiss="modal">
+                <svg class="icon icon-close"><use xlink:href="#icon-close"></use></svg>
+            </button>
+            <div class="modal-body">
+                <div class="form-crop">
+                    <span class="form-crop__thumb">
+                        <span class="form-crop__image">
+                            <img src="img/no-image.png" class="cropper">
+                        </span>
+                        <span class="form-crop__content">
+                            <span class="form-crop__title">Моего кота зовут <span class="js-pet__name">Пушок</span></span>
+                            <span class="form-crop__description">Я ответственный хозяин, поэтому запланировал профилактический ветеринарный осмотр</span>
+                        </span>
+                        <svg class="icon icon-logo"><use xlink:href="#icon-logo"></use></svg>
+                    </span>
+                </div>
+                <div class="modal-footer">
+                    <label class="form-upload__add form-upload" data-upload=false data-add="Добавить <br>фото" data-change="Изменить <br>фото">
+                        <input type="file" class="form-upload__input">
+                        <svg class="icon icon-photo"><use xlink:href="#icon-photo"></use></svg>
+                        <span class="form-upload__text">Добавить <br>фото</span>
+                    </label>
+                    <button class="btn btn-default js-inc-counter" data-dismiss="modal">Готово</button>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
+
   </body>
 </html>

@@ -11,6 +11,10 @@
       max-height: 40px;
     }
   }
+  &-favicon {
+    max-width: 60px;
+    max-height: 33px;
+  }
   &-menu {
     border: 0;
     padding: 0;
@@ -57,5 +61,15 @@
     &:nth-child(3) {
       max-width: 28px;
     }
+  }
+  &-message {
+    max-width: 40px;
+    max-height: 40px;
+    fill: map_get($colors, default);
+  }
+  &-marker {
+    max-width: 28px;
+    max-height: 38px;
+    fill: map_get($colors, default);
   }
 }

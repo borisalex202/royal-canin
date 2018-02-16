@@ -16,7 +16,7 @@
       padding-top: 133px;
     }
     @media (max-width: $screen-xs-max) {
-      padding-top: 75px;
+      padding-top: 77px;
     }
   }
   &-header {
@@ -30,7 +30,51 @@
     background: #fff;
     z-index: 100;
     border-bottom: 2px solid map_get($colors, gray);
+    @include transition($transition);
 
+    &._fixed {
+
+      top: -126px;
+
+      .site {
+        &-logo {
+          display: none;
+
+          &._mini {
+            display: inline-block !important;
+          }
+        }
+      }
+      .company {
+        display: none;
+      }
+      .counter {
+        width: 60%;
+        @include scale(.65);
+
+        &-block {
+          position: relative;
+          left: -45px;
+          width: 130%;
+          @include flexbox();
+          @include flex-wrap(nowrap);
+        }
+        &-label {
+          width: 40%;
+          margin: 0 -30px;
+          line-height: 24px;
+        }
+      }
+      .site-menu {
+        .counter-block {
+          display: none;
+        }
+      }
+    }
+    &._active {
+      position: fixed;
+      top: 0;
+    }
     .container {
       position: relative;
       height: 100%;
@@ -80,7 +124,7 @@
       }
     }
     @media (max-width: $screen-xs-max) {
-      height: 75px;
+      height: 77px;
 
       .right {
         display: none;
@@ -98,6 +142,9 @@
     margin-left: 40px;
     @include inline-flex();
 
+    &._mini {
+      display: none;
+    }
     @media (max-width: $screen-xs-max) {
       padding-right: 32px;
       margin: 0 auto;
